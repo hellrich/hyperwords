@@ -111,7 +111,7 @@ def get_neighbors(representation, word, closest):
 def evaluate_ws(representation, data):
     results = []
     for (x, y), sim in data:
-        results.append((representation.similarity(x, y), sim))
+        results.append((representation.similarity(x, y), float(sim)))
     actual, expected = zip(*results)
     return spearmanr(actual, expected)[0]
 
